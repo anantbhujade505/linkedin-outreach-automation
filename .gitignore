@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+secrets/
+.auth/
+.browser/
+database/*.sqlite3
+database/*.sqlite3-*
+logs/*.log
+logs/*.zip
+screenshots/*.png
+.pytest_cache/
+.coverage

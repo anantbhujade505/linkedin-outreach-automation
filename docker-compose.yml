@@ -1,0 +1,25 @@
+services:
+  linkedin-outreach:
+    build: .
+    env_file: .env
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+      - ./screenshots:/app/screenshots
+      - ./database:/app/database
+      - ./.auth:/app/.auth
+      - ./.browser:/app/.browser
+    command: python -m jobs.run_outreach
+
+  linkedin-followup:
+    build: .
+    env_file: .env
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+      - ./screenshots:/app/screenshots
+      - ./database:/app/database
+      - ./.auth:/app/.auth
+      - ./.browser:/app/.browser
+    command: python -m jobs.run_followup
+    profiles: ["followup"]
